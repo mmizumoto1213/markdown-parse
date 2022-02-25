@@ -10,7 +10,6 @@ import org.junit.*;
 public class MarkdownParseTest {
     @Test
     public void addition() {
-        System.out.println("Hi");
         assertEquals(2, 1 + 1);
     }
 
