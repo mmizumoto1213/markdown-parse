@@ -15,41 +15,25 @@ public class MarkdownParseTest {
     }
 
     @Test
-    public void getLinks1() throws IOException{
-        List<String> expect = List.of("https://something.com", "some-page.html");
-        Path fileName = Path.of("test-file.md");
+    public void getSnippit1Links() throws IOException{
+        List<String> expect = List.of("`google.com", "google.com", "ucsd.edu");
+        Path fileName = Path.of("Snippit1.md");
 	    String contents = Files.readString(fileName);
         assertEquals(expect, MarkdownParse.getLinks(contents));
     } 
 
     @Test
-    public void getLinks2() throws IOException{
-        List<String> expect = List.of("image.jpg");
-        Path fileName = Path.of("new-test.md");
+    public void getSnippit2Links() throws IOException{
+        List<String> expect = List.of("a.com", "a.com(())", "example.com");
+        Path fileName = Path.of("Snippit2.md");
 	    String contents = Files.readString(fileName);
         assertEquals(expect, MarkdownParse.getLinks(contents));
     } 
 
     @Test
-    public void getLinks3() throws IOException{
-        List<String> expect = List.of("google.com");
-        Path fileName = Path.of("test-file3.md");
-	    String contents = Files.readString(fileName);
-        assertEquals(expect, MarkdownParse.getLinks(contents));
-    }
-
-    @Test
-    public void getLinks4() throws IOException{
-        List<String> expect = List.of();
-        Path fileName = Path.of("test-file4.md");
-	    String contents = Files.readString(fileName);
-        assertEquals(expect, MarkdownParse.getLinks(contents));
-    }
-
-    @Test
-    public void getLinks5() throws IOException{
-        List<String> expect = List.of();
-        Path fileName = Path.of("test-file5.md");
+    public void getSnippit3Links() throws IOException{
+        List<String> expect = List.of("https://ucsd-cse15l-w22.github.io/");
+        Path fileName = Path.of("Snippit3.md");
 	    String contents = Files.readString(fileName);
         assertEquals(expect, MarkdownParse.getLinks(contents));
     }
